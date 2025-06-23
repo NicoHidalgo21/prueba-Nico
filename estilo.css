@@ -10,7 +10,7 @@ body {
     font-family: 'Roboto', sans-serif; /* Cambié la fuente para un estilo más moderno */
     background-color: #f0f0f5; /* Fondo más suave */
     padding: 40px 20px;
-    color: #333;
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -19,7 +19,7 @@ body {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ h1 {
 /* Subtítulo para el nombre del estudiante */
 p {
     font-size: 1.1rem;
-    color: #555;
+    color: #000000;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -48,7 +48,7 @@ form label {
     font-weight: 500;
     margin-top: 12px;
     font-size: 1.1rem;
-    color: #555;
+    color: #000000;
 }
 
 /* Estilo de los inputs, textarea y select */
@@ -56,7 +56,7 @@ input, textarea, select {
     width: 100%;
     padding: 12px;
     margin-top: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #f08181;
     border-radius: 6px;
     font-size: 1rem;
     background-color: #fafafa;
@@ -72,7 +72,7 @@ input:focus, textarea:focus, select:focus {
 /* Estilo del botón */
 button {
     background-color: #4CAF50;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 12px 18px;
     border: none;
     border-radius: 6px;
@@ -84,7 +84,7 @@ button {
 
 /* Efecto hover para el botón */
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049b5;
 }
 
 /* Estilo de la lista de tareas */
@@ -95,6 +95,78 @@ button:hover {
 h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #333;
+    color: #ff0000;
     margin-bottom: 20px;
+}
+
+/* Estilo de las tarjetas de tarea */
+.task-card {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.task-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos dentro de las tarjetas */
+.task-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+/* Estilo de los párrafos dentro de la tarjeta */
+.task-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Estilo de la prioridad dentro de las tarjetas */
+.task-card .priority {
+    font-weight: 600;
+    color: #fafafa;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Colores según la prioridad */
+.task-card .Urgente {
+    background-color: #e74c3c;
+}
+
+.task-card .Normal {
+    background-color: #f39c12;
+}
+
+.task-card .Baja {
+    background-color: #27ae60;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form label {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
