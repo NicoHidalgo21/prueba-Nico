@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Tareas</title>
-  <link rel="stylesheet" href="estilo.css" />
-</head>
-<body>
-  <h1>Mi Lista de Tareas</h1>
-  <p>Nombre del estudiante: __________________________</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Gestión de Tareas - Estudiante: [Tu Nombre]</h1>
+      </header>
 
-  <!-- Aquí irá el formulario y la lista generada con JavaScript -->
+      <main>
+        <section class="formulario-tarea">
+          <h2>Agregar Tarea</h2>
+          <form id="formTarea">
+            <label for="nombre">Nombre de la tarea:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="25" required />
 
-  <script src="app.js"></script>
-</body>
+            <label for="fecha">Fecha de entrega:</label>
+            <input type="date" id="fecha" name="fecha" required />
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+              <option value="" disabled selected>Seleccione un tipo</option>
+              <option value="Universidad">Universidad</option>
+              <option value="Personal">Personal</option>
+              <option value="Trabajo">Trabajo</option>
+              <option value="Hobby">Hobby</option>
+            </select>
+
+            <fieldset>
+              <legend>Prioridad:</legend>
+              <label><input type="radio" name="prioridad" value="Urgente" required /> Urgente</label>
+              <label><input type="radio" name="prioridad" value="Normal" /> Normal</label>
+              <label><input type="radio" name="prioridad" value="Baja" /> Baja</label>
+            </fieldset>
+
+            <button type="submit">Agregar tarea</button>
+          </form>
+        </section>
+
+        <section class="lista-tareas">
+          <h2>Tareas Pendientes</h2>
+          <div id="tareasContainer"></div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 - Gestión de Tareas</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
