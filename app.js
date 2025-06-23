@@ -1,56 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('taskForm');
-    const taskList = document.getElementById('tasks');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // Obtener los valores del formulario
-        const taskName = document.getElementById('taskName').value;
-        const dueDate = document.getElementById('dueDate').value;
-        const description = document.getElementById('description').value;
-        const taskType = document.getElementById('taskType').value;
-        const priorityElements = document.getElementsByName('priority');
-        let priorityValue = '';
-        
-        for (let i = 0; i < priorityElements.length; i++) {
-            if (priorityElements[i].checked) {
-                priorityValue = priorityElements[i].value;
-                break;
-            }
+    const form = document.getElementById('formTarea');
+    const taskList = document.getElementById('taskList');
+  
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+  
+      const nombreTarea = document.getElementById("nombre").value.trim();
+      const fechaEntrega = document.getElementById("fecha").value;
+      const descripcionTarea = document.getElementById("descripcion").value.trim();
+      const tipoTarea = document.getElementById("tipo").value;
+  
+      const prioridadRadios = document.getElementsByName("prioridad");
+      let prioridad = '';
+      for (let i = 0; i < prioridadRadios.length; i++) {
+        if (prioridadRadios[i].checked) {
+          prioridad = prioridadRadios[i].value;
+          break;
         }
-
-        // Validar que todos los campos estén completos
-        if (!taskName || !dueDate || !description || !taskType || !priorityValue) {
-            alert('Por favor, complete todos los campos.');
-            return;
-        }
-
-        // Crear el objeto de tarea
-        const task = {
-            taskName,
-            dueDate,
-            description,
-            taskType,
-            priorityValue
-        };
-
-        // Crear el HTML para la nueva tarea
-        const taskCard = document.createElement('div');
-        taskCard.classList.add('task-card');
-
-        taskCard.innerHTML = `
-            <h3>${task.taskName}</h3>
-            <p><strong>Fecha de entrega:</strong> ${task.dueDate}</p>
-            <p><strong>Descripción:</strong> ${task.description}</p>
-            <p><strong>Tipo:</strong> ${task.taskType}</p>
-            <p class="priority ${task.priorityValue}"><strong>Prioridad:</strong> ${task.priorityValue}</p>
-        `;
-
-        // Agregar la tarea a la lista
-        taskList.appendChild(taskCard);
-
-        // Limpiar el formulario
-        form.reset();
+      }
+  
+      if (!nombreTarea || !fechaEntrega || !descripcionTarea || !tipoTarea || !prioridad) {
+        alert("Por favor, complete todos los campos.");
+        return;
+      }
+  
+      const taskCard = document.createElement("div");
+      taskCard.classList.add("task-card");
+  
+      taskCard.innerHTML = `
+        <h3>${nombreTarea}</h3>
+        <p><strong>Fecha de entrega:</strong> ${fechaEntrega}</p>
+        <p><strong>Descripción:</strong> ${descripcionTarea}</p>
+        <p><strong>Tipo:</strong> ${tipoTarea}</p>
+        <p class="priority ${prioridad}"><strong>Prioridad:</strong> ${prioridad}</p>
+      `;
+  
+      taskList.appendChild(taskCard);
+      form.reset();
     });
-});
+  });
+  

@@ -7,25 +7,24 @@
 
 /* Estilos generales para el cuerpo */
 body {
-    font-family: 'Roboto', sans-serif; 
-    background-color: #d6eedb; /* Fondo más suave */
+    font-family: 'Roboto', sans-serif;
+    background-color: #d6eedb;
     padding: 40px 20px;
     color: #000000;
     line-height: 1.6;
 }
 
-/* Contenedor principal con sombras y bordes redondeados */
+/* Contenedor principal */
 .container {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Título principal */
 h1 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -34,7 +33,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Subtítulo para el nombre del estudiante */
 p {
     font-size: 1.1rem;
     color: #000000;
@@ -42,7 +40,6 @@ p {
     margin-bottom: 40px;
 }
 
-/* Formulario */
 form label {
     display: block;
     font-weight: 500;
@@ -51,7 +48,6 @@ form label {
     color: #000000;
 }
 
-/* Estilo de los inputs, textarea y select */
 input, textarea, select {
     width: 100%;
     padding: 12px;
@@ -63,16 +59,14 @@ input, textarea, select {
     transition: border-color 0.3s ease-in-out;
 }
 
-/* Cambio de color de borde cuando el input está enfocado */
 input:focus, textarea:focus, select:focus {
     border-color: #4CAF50;
     outline: none;
 }
 
-/* Estilo del botón */
 button {
     background-color: #4CAF50;
-    color: rgb(255, 255, 255);
+    color: #fff;
     padding: 12px 18px;
     border: none;
     border-radius: 6px;
@@ -82,12 +76,10 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover para el botón */
 button:hover {
     background-color: #45a049b5;
 }
 
-/* Estilo de la lista de tareas */
 #taskList {
     margin-top: 40px;
 }
@@ -95,11 +87,10 @@ button:hover {
 h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #ff0000;
+    color: #000000;
     margin-bottom: 20px;
 }
 
-/* Estilo de las tarjetas de tarea */
 .task-card {
     background-color: #fff;
     border: 1px solid #e1e1e1;
@@ -110,33 +101,30 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-/* Efecto al pasar el ratón sobre la tarjeta */
 .task-card:hover {
     transform: translateY(-5px);
 }
 
-/* Títulos dentro de las tarjetas */
 .task-card h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000000;
+    color: #e71414;
     margin-bottom: 12px;
 }
 
-/* Estilo de los párrafos dentro de la tarjeta */
 .task-card p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 8px;
 }
 
-/* Estilo de la prioridad dentro de las tarjetas */
 .task-card .priority {
     font-weight: 600;
-    color: #fafafa;
+    color: #fff;
     padding: 8px 14px;
     border-radius: 8px;
     font-size: 1rem;
+    display: inline-block;
 }
 
 /* Colores según la prioridad */
@@ -152,7 +140,6 @@ h2 {
     background-color: #27ae60;
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
         padding: 20px;

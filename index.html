@@ -7,60 +7,56 @@
   <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-  <h1>Mi Lista de Tareas</h1>
-  <p>Nombre del estudiante: Nicolás Hidalgo</p>
+  <div class="container">
+    <h1>Mi Lista de Tareas</h1>
+    <p>Nombre del estudiante: Nicolás Hidalgo</p>
 
-      <main>
-        <section class="formulario-tarea">
-          <h2>Agregar Tarea</h2>
-          <form id="formTarea">
-            <label for="nombre">Nombre de la tarea:</label>
-            <input type="text" id="nombre" name="nombre" maxlength="25" required />
+    <main class="panel">
+      <!-- Columna izquierda: formulario -->
+      <section class="formulario-tarea">
+        <h2>Agregar Tarea</h2>
+        <form id="formTarea">
+          <label for="nombre">Nombre de la tarea:</label>
+          <input type="text" id="nombre" name="nombre" maxlength="25" required />
 
-            <br><br>
+          <label for="fecha">Fecha de entrega:</label>
+          <input type="date" id="fecha" name="fecha" required />
 
-            <label for="fecha">Fecha de entrega:</label>
-            <input type="date" id="fecha" name="fecha" required />
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
-            <br><br>
+          <label for="tipo">Tipo:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="" disabled selected>Selecciona la categoría correspondiente</option>
+            <option value="Universidad">Universidad</option>
+            <option value="Personal">Personal</option>
+            <option value="Trabajo">Trabajo</option>
+            <option value="Hobby">Hobby</option>
+          </select>
 
-            <label for="descripcion">Descripción:</label>
-            <option value="" disabled selected>Describe brevemente que debes hacer en tu tarea pendiente</option>
-            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+          <fieldset>
+            <legend>Prioridad:</legend>
+            <label><input type="radio" name="prioridad" value="Urgente" required /> Urgente</label>
+            <label><input type="radio" name="prioridad" value="Normal" /> Normal</label>
+            <label><input type="radio" name="prioridad" value="Baja" /> Baja</label>
+          </fieldset>
 
-            <label for="tipo">Tipo:</label>
-            <select id="tipo" name="tipo" required>
-              <option value="" disabled selected>Selecciona la categoria correspondiente a tu tarea:</option>
-              <option value="Universidad">Universidad</option>
-              <option value="Personal">Personal</option>
-              <option value="Trabajo">Trabajo</option>
-              <option value="Hobby">Hobby</option>
-            </select>
-     
-            <br><br><br>
-    
-            <fieldset>
-              <legend>Prioridad:</legend>
-              <label><input type="radio" name="prioridad" value="Urgente" required /> Urgente</label>
-              <label><input type="radio" name="prioridad" value="Normal" /> Normal</label>
-              <label><input type="radio" name="prioridad" value="Baja" /> Baja</label>
-            </fieldset>
+          <button type="submit">Agregar tarea pendiente</button>
+        </form>
+      </section>
 
-            <button type="submit">Agregar tarea pendiente</button>
-          </form>
-        </section>
+      <!-- Columna derecha: tareas -->
+      <section class="lista-tareas">
+        <h2>Tareas Pendientes</h2>
+        <div id="taskList"></div>
+      </section>
+    </main>
 
-        <section class="lista-tareas">
-          <h2>Tareas Pendientes</h2>
-          <div id="tareasContainer"></div>
-        </section>
-      </main>
+    <footer>
+      <p>&copy; 2025 - Gestión de Tareas</p>
+    </footer>
+  </div>
 
-      <footer>
-        <p>&copy; 2025 - Gestión de Tareas</p>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
 </html>
