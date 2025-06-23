@@ -26,5 +26,31 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Crear el objeto de tarea
+        const task = {
+            taskName,
+            dueDate,
+            description,
+            taskType,
+            priorityValue
+        };
 
+        // Crear el HTML para la nueva tarea
+        const taskCard = document.createElement('div');
+        taskCard.classList.add('task-card');
+
+        taskCard.innerHTML = `
+            <h3>${task.taskName}</h3>
+            <p><strong>Fecha de entrega:</strong> ${task.dueDate}</p>
+            <p><strong>Descripción:</strong> ${task.description}</p>
+            <p><strong>Tipo:</strong> ${task.taskType}</p>
+            <p class="priority ${task.priorityValue}"><strong>Prioridad:</strong> ${task.priorityValue}</p>
+        `;
+
+        // Agregar la tarea a la lista
+        taskList.appendChild(taskCard);
+
+        // Limpiar el formulario
+        form.reset();
+    });
 });

@@ -17,29 +17,36 @@
             <label for="nombre">Nombre de la tarea:</label>
             <input type="text" id="nombre" name="nombre" maxlength="25" required />
 
+            <br><br>
+
             <label for="fecha">Fecha de entrega:</label>
             <input type="date" id="fecha" name="fecha" required />
 
+            <br><br>
+
             <label for="descripcion">Descripción:</label>
+            <option value="" disabled selected>Describe brevemente que debes hacer en tu tarea pendiente</option>
             <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
             <label for="tipo">Tipo:</label>
             <select id="tipo" name="tipo" required>
-              <option value="" disabled selected>Seleccione un tipo</option>
+              <option value="" disabled selected>Selecciona la categoria correspondiente a tu tarea:</option>
               <option value="Universidad">Universidad</option>
               <option value="Personal">Personal</option>
               <option value="Trabajo">Trabajo</option>
               <option value="Hobby">Hobby</option>
             </select>
-
+     
+            <br><br><br>
+    
             <fieldset>
               <legend>Prioridad:</legend>
               <label><input type="radio" name="prioridad" value="Urgente" required /> Urgente</label>
               <label><input type="radio" name="prioridad" value="Normal" /> Normal</label>
               <label><input type="radio" name="prioridad" value="Baja" /> Baja</label>
             </fieldset>
-            
-            <button type="submit">Agregar tarea</button>
+
+            <button type="submit">Agregar tarea pendiente</button>
           </form>
         </section>
 
